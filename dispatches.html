@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dispatches — Geanna Orozco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100;9..144,400;9..144,700;9..144,900&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Fraunces', serif; background: #fff; color: #111; min-height: 100vh; display: flex; flex-direction: column; }
+  nav { display: flex; align-items: center; justify-content: flex-end; padding: 28px 48px; border-bottom: 0.5px solid #ebebeb; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #111; text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: #F03621; }
+  .nav-links a.current { color: #F03621; }
+  main { flex: 1; padding: 60px 48px 70px; max-width: 640px; }
+  .label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #ccc; margin-bottom: 40px; }
+  .entry { padding-bottom: 48px; margin-bottom: 48px; border-bottom: 0.5px solid #ebebeb; }
+  .entry:last-child { border-bottom: none; }
+  .entry-date { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc; margin-bottom: 14px; }
+  .entry-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px; color: #1338BE; margin-bottom: 16px; }
+  .entry-image-placeholder { width: 100%; aspect-ratio: 16/10; background: #f4f4f4; margin-bottom: 18px; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc; }
+  .entry-text { font-family: 'Fraunces', serif; font-size: 16px; line-height: 1.8; color: #111; font-weight: 400; }
+  @media (max-width: 600px) {
+    nav { padding: 20px 24px; } main { padding: 40px 24px 50px; }
+    .nav-links { gap: 16px; } .nav-links a { font-size: 9px; }
+    .entry-title { font-size: 18px; } .entry-text { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="photography.html">Photography</a>
+    <a href="dispatches.html" class="current">Dispatches</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main>
+  <div class="label">Dispatches</div>
+
+  <div class="entry">
+    <div class="entry-date">Placeholder date</div>
+    <div class="entry-title">First entry title</div>
+    <div class="entry-image-placeholder">Image (optional)</div>
+    <div class="entry-text">This is where a short essay, a photo with a caption, or a musing goes. Replace this text with your first real entry.</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-date">Placeholder date</div>
+    <div class="entry-title">Second entry title</div>
+    <div class="entry-text">Text-only entries work too — not every post needs an image.</div>
+  </div>
+
+</main>
+
+</body>
+</html>
