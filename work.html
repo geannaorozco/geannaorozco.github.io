@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Geanna Orozco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100;9..144,400;9..144,700;9..144,900&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Fraunces', serif; background: #fff; color: #111; min-height: 100vh; display: flex; flex-direction: column; }
+  nav { display: flex; align-items: center; justify-content: flex-end; padding: 28px 48px; border-bottom: 0.5px solid #ebebeb; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #111; text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: #F03621; }
+  .nav-links a.current { color: #F03621; }
+  main { flex: 1; padding: 60px 48px 70px; max-width: 900px; }
+  .label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #ccc; margin-bottom: 40px; }
+  .work-list { list-style: none; }
+  .work-row { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 18px 0; border-top: 0.5px solid #ebebeb; text-decoration: none; transition: opacity 0.15s; }
+  .work-list .work-row:last-child { border-bottom: 0.5px solid #ebebeb; }
+  .work-row:hover { opacity: 0.6; }
+  .work-row:hover .work-title { color: #F03621; }
+  .work-row:hover .work-year { color: #1338BE; }
+  .work-left { display: flex; align-items: baseline; gap: 20px; flex: 1; min-width: 0; }
+  .work-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; letter-spacing: 0.01em; color: #1338BE; transition: color 0.15s; }
+  .work-form { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc; white-space: nowrap; }
+  .work-year { font-family: 'DM Mono', monospace; font-size: 12px; color: #ccc; white-space: nowrap; letter-spacing: 0.06em; transition: color 0.15s; }
+  footer { display: flex; justify-content: flex-end; align-items: center; gap: 22px; padding: 20px 48px; border-top: 0.5px solid #ebebeb; }
+  footer a { color: #ccc; transition: color 0.15s; display: flex; align-items: center; }
+  footer a:hover { color: #F03621; }
+  footer svg { width: 17px; height: 17px; fill: currentColor; }
+  @media (max-width: 600px) {
+    nav { padding: 20px 24px; } main { padding: 40px 24px 50px; } footer { padding: 16px 24px; }
+    .nav-links { gap: 18px; } .nav-links a { font-size: 9px; } .work-title { font-size: 15px; }
+    .work-left { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
 
+<nav>
+  <div class="nav-links">
+    <a href="work.html" class="current">Work</a>
+    <a href="photography.html">Photography</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main>
+  <div class="label">Work</div>
+  <ul class="work-list">
+    <li><a href="#" class="work-row"><div class="work-left"><span class="work-title">INCINE</span><span class="work-form">Documentary</span></div><span class="work-year">In production</span></a></li>
+    <li><a href="#" class="work-row"><div class="work-left"><span class="work-title">Sutured</span><span class="work-form">Video art</span></div><span class="work-year">2026</span></a></li>
+    <li><a href="#" class="work-row"><div class="work-left"><span class="work-title">Fantastic Planet: A Scene Rescored</span><span class="work-form">Sound / video</span></div><span class="work-year">2026</span></a></li>
+    <li><a href="#" class="work-row"><div class="work-left"><span class="work-title">Future Past</span><span class="work-form">Audiovisual essay</span></div><span class="work-year">2026</span></a></li>
