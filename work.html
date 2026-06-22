@@ -11,7 +11,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Fraunces', serif; background: #fff; color: #111; min-height: 100vh; display: flex; flex-direction: column; }
   nav { display: flex; align-items: center; justify-content: flex-end; padding: 28px 48px; border-bottom: 0.5px solid #ebebeb; }
-  .nav-links { display: flex; gap: 32px; }
+  .nav-links { display: flex; gap: 28px; }
   .nav-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #111; text-decoration: none; transition: color 0.15s; }
   .nav-links a:hover { color: #F03621; }
   .nav-links a.current { color: #F03621; }
@@ -27,13 +27,9 @@
   .work-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; letter-spacing: 0.01em; color: #1338BE; transition: color 0.15s; }
   .work-form { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc; white-space: nowrap; }
   .work-year { font-family: 'DM Mono', monospace; font-size: 12px; color: #ccc; white-space: nowrap; letter-spacing: 0.06em; transition: color 0.15s; }
-  footer { display: flex; justify-content: flex-end; align-items: center; gap: 22px; padding: 20px 48px; border-top: 0.5px solid #ebebeb; }
-  footer a { color: #ccc; transition: color 0.15s; display: flex; align-items: center; }
-  footer a:hover { color: #F03621; }
-  footer svg { width: 17px; height: 17px; fill: currentColor; }
   @media (max-width: 600px) {
-    nav { padding: 20px 24px; } main { padding: 40px 24px 50px; } footer { padding: 16px 24px; }
-    .nav-links { gap: 18px; } .nav-links a { font-size: 9px; } .work-title { font-size: 15px; }
+    nav { padding: 20px 24px; } main { padding: 40px 24px 50px; }
+    .nav-links { gap: 16px; } .nav-links a { font-size: 9px; } .work-title { font-size: 15px; }
     .work-left { flex-direction: column; gap: 4px; }
   }
 </style>
@@ -45,6 +41,7 @@
     <a href="index.html">Home</a>
     <a href="work.html" class="current">Work</a>
     <a href="photography.html">Photography</a>
+    <a href="dispatches.html">Dispatches</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -57,3 +54,11 @@
     <li><a href="#" class="work-row"><div class="work-left"><span class="work-title">Sutured</span><span class="work-form">Video art</span></div><span class="work-year">2026</span></a></li>
     <li><a href="#" class="work-row"><div class="work-left"><span class="work-title">Fantastic Planet: A Scene Rescored</span><span class="work-form">Sound / video</span></div><span class="work-year">2026</span></a></li>
     <li><a href="#" class="work-row"><div class="work-left"><span class="work-title">Future Past</span><span class="work-form">Audiovisual essay</span></div><span class="work-year">2026</span></a></li>
+    <li><a href="#" class="work-row"><div class="work-left"><span class="work-title">Romantikas</span><span class="work-form">Experimental documentary</span></div><span class="work-year">2025</span></a></li>
+    <li><a href="#" class="work-row"><div class="work-left"><span class="work-title">Niña AmeriNica</span><span class="work-form">Experimental</span></div><span class="work-year">2025</span></a></li>
+    <li><a href="#" class="work-row"><div class="work-left"><span class="work-title">Joan Mitchell Conservation Exhibition</span><span class="work-form">Short film · Commissioned</span></div><span class="work-year">2025</span></a></li>
+  </ul>
+</main>
+
+</body>
+</html>
