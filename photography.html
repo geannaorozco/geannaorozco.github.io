@@ -15,19 +15,18 @@
   .nav-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #111; text-decoration: none; transition: color 0.15s; }
   .nav-links a:hover { color: #F03621; }
   .nav-links a.current { color: #F03621; }
-  main { flex: 1; padding: 60px 48px 70px; }
-  .label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #ccc; margin-bottom: 32px; }
-  .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .photo-item img { width: 100%; display: block; }
-  .photo-item-placeholder {
-    width: 100%; aspect-ratio: 4/5; background: #f4f4f4;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc;
-  }
-  @media (max-width: 700px) {
-    .photo-grid { grid-template-columns: 1fr; }
-    nav { padding: 20px 24px; } main { padding: 40px 24px 50px; }
+  main { flex: 1; padding: 60px 32px 70px; }
+  .label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #ccc; margin-bottom: 32px; padding-left: 16px; }
+  .masonry { column-count: 4; column-gap: 12px; }
+  .masonry-item { margin-bottom: 12px; break-inside: avoid; }
+  .masonry-item img { width: 100%; display: block; border-radius: 2px; }
+  @media (max-width: 900px) { .masonry { column-count: 3; } }
+  @media (max-width: 600px) {
+    .masonry { column-count: 2; column-gap: 8px; }
+    .masonry-item { margin-bottom: 8px; }
+    nav { padding: 20px 24px; } main { padding: 40px 16px 50px; }
     .nav-links { gap: 16px; } .nav-links a { font-size: 9px; }
+    .label { padding-left: 8px; }
   }
 </style>
 </head>
@@ -46,19 +45,67 @@
 
 <main>
   <div class="label">Photography</div>
-  <div class="photo-grid">
-    <div class="photo-item">
-      <div class="photo-item-placeholder">Image 1</div>
-    </div>
-    <div class="photo-item">
-      <div class="photo-item-placeholder">Image 2</div>
-    </div>
-    <div class="photo-item">
-      <div class="photo-item-placeholder">Image 3</div>
-    </div>
-    <div class="photo-item">
-      <div class="photo-item-placeholder">Image 4</div>
-    </div>
+  <div class="masonry">
+    <div class="masonry-item"><img src="images/photography/CannesCrepes.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/alpstrrainhand.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/andreahair.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/andreainmarseilles.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/andreatub.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/arizonamountatins.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/arizonareststop.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/auroreandcandide.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/beachscene.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/beachscenebig.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/biarritzsea.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/bootsbrooklyn.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/britneymarfa.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/britneymarfa2.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/britneytub.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/broandsisnice.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/cannesgirls.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/cannesport.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/cannesumbrellas.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/canyons.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/dilloniceland.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/dillonshadows.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/dillonshowernice.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/dillonverticaliceland.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/duskparisbuildin.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/eclecticdoor.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/familyinparis.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/frenchbuildings.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/germantrainstop.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/goldenhournice.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/gorgeousmuseumshot.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/gorgwater.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/home.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/icelandcoolchurch.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/icelandcowmountain.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/italianbalcony.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/libbyhostel.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/marseillesbigmoon.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/marseillesbuildings.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/marseillesgorgeousbandw.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/moodyfrenchbuilding.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/morenicebalcony.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/muse_dorsay.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/nice.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/nicebalcony.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/oaxaca_flower_lady.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/oaxaca_shoe_shine.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/oaxacafruitstand.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/oaxacaherblady.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/parisprotest.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/parisroofs.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/sadsandcastle.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/sandcastle.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/scar.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/spainbeach.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/spanishbeach.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/towelsitaly.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/venice.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/viewfromsacrecoeur.jpg" alt=""></div>
+    <div class="masonry-item"><img src="images/photography/womanaloneinnice.jpg" alt=""></div>
   </div>
 </main>
 
