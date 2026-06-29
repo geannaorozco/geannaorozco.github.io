@@ -1,1 +1,56 @@
-s
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sutured — Geanna Orozco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100;9..144,400;9..144,700;9..144,900&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Fraunces', serif; background: #fff; color: #111; min-height: 100vh; display: flex; flex-direction: column; }
+  nav { display: flex; align-items: center; justify-content: flex-end; padding: 28px 48px; border-bottom: 0.5px solid #ebebeb; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #111; text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: #F03621; }
+  main { flex: 1; padding: 56px 48px 70px; max-width: 700px; }
+  .back { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #ccc; text-decoration: none; display: inline-block; margin-bottom: 44px; transition: color 0.15s; }
+  .back:hover { color: #F03621; }
+  .film-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 36px; letter-spacing: 0.01em; color: #1338BE; margin-bottom: 10px; line-height: 1.1; }
+  .film-meta { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ccc; margin-bottom: 36px; }
+  .film-cover { width: 100%; max-width: 600px; display: block; margin-bottom: 36px; }
+  .film-synopsis { font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.85; color: #111; font-weight: 400; margin-bottom: 48px; }
+  .viewing-note { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc; padding-top: 24px; border-top: 0.5px solid #ebebeb; }
+  @media (max-width: 600px) {
+    nav { padding: 20px 24px; } main { padding: 36px 24px 50px; }
+    .nav-links { gap: 16px; } .nav-links a { font-size: 9px; }
+    .film-title { font-size: 26px; } .film-synopsis { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="photography.html">Photography</a>
+    <a href="dispatches.html">Dispatches</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main>
+  <a href="work.html" class="back">← Work</a>
+  <div class="film-title">Sutured</div>
+  <div class="film-meta">2026 · Video Art · 1 min</div>
+  <img src="images/sutured-cover.png" alt="Sutured film still" class="film-cover">
+  <div class="film-synopsis">"If you want to be a good girl, you just need to follow these simple rules." A one-minute video work that examines the language of feminine conditioning.</div>
+  <div class="viewing-note">Viewing available upon request — <a href="mailto:geanna@geannaorozco.com?subject=Viewing request: Sutured" style="color:#1338BE; text-decoration:underline;">email for access</a></div>
+</main>
+
+</body>
+</html>
