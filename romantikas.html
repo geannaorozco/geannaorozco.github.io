@@ -1,4 +1,3 @@
-place holder
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +20,16 @@ place holder
   .film-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 36px; letter-spacing: 0.01em; color: #1338BE; margin-bottom: 10px; line-height: 1.1; }
   .film-meta { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #ccc; margin-bottom: 36px; }
   .film-cover { width: 100%; max-width: 600px; display: block; margin-bottom: 36px; }
-  .film-synopsis { font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.85; color: #111; font-weight: 400; margin-bottom: 48px; }
+  .film-synopsis { font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.85; color: #111; font-weight: 400; margin-bottom: 40px; }
+  .stills-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #ccc; margin-bottom: 16px; }
+  .stills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 48px; }
+  .stills-grid img { width: 100%; display: block; border-radius: 2px; }
   .viewing-note { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc; padding-top: 24px; border-top: 0.5px solid #ebebeb; }
   @media (max-width: 600px) {
     nav { padding: 20px 24px; } main { padding: 36px 24px 50px; }
     .nav-links { gap: 16px; } .nav-links a { font-size: 9px; }
     .film-title { font-size: 26px; } .film-synopsis { font-size: 15px; }
+    .stills-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -49,6 +52,13 @@ place holder
   <div class="film-meta">2025 · Experimental Documentary · 9 min 53 sec</div>
   <img src="images/romantikas-cover.png" alt="Romantikas film still" class="film-cover">
   <div class="film-synopsis">Three anonymous sex workers speak — their reflections, contradictions, and interior lives rendered through a documentary form that refuses easy legibility. Romantikas moves between testimony and abstraction, asking what it means to listen without resolving.</div>
+
+  <div class="stills-label">Stills</div>
+  <div class="stills-grid">
+    <img src="images/romantikas2.png" alt="Romantikas film still">
+    <img src="images/romantikas3.png" alt="Romantikas film still">
+  </div>
+
   <div class="viewing-note">Viewing available upon request — <a href="mailto:geanna@geannaorozco.com?subject=Viewing request: Romantikas" style="color:#1338BE; text-decoration:underline;">email for access</a></div>
 </main>
 
