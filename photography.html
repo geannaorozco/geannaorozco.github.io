@@ -18,8 +18,52 @@
   main { flex: 1; padding: 60px 32px 70px; }
   .label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #ccc; margin-bottom: 32px; padding-left: 16px; }
   .masonry { column-count: 4; column-gap: 12px; }
-  .masonry-item { margin-bottom: 12px; break-inside: avoid; }
-  .masonry-item img { width: 100%; display: block; border-radius: 2px; }
+  .masonry-item { margin-bottom: 12px; break-inside: avoid; cursor: pointer; }
+  .masonry-item img { width: 100%; display: block; border-radius: 2px; transition: opacity 0.15s; }
+  .masonry-item:hover img { opacity: 0.85; }
+
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.97);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+    cursor: pointer;
+  }
+  .lightbox-overlay.active { display: flex; }
+  .lightbox-img {
+    max-width: 90vw;
+    max-height: 78vh;
+    display: block;
+    cursor: default;
+    border-radius: 2px;
+  }
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999;
+    margin-top: 20px;
+    cursor: default;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 28px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .lightbox-close:hover { color: #F03621; }
+
   @media (max-width: 900px) { .masonry { column-count: 3; } }
   @media (max-width: 600px) {
     .masonry { column-count: 2; column-gap: 8px; }
@@ -27,6 +71,8 @@
     nav { padding: 20px 24px; } main { padding: 40px 16px 50px; }
     .nav-links { gap: 16px; } .nav-links a { font-size: 9px; }
     .label { padding-left: 8px; }
+    .lightbox-close { top: 18px; right: 20px; }
+    .lightbox-overlay { padding: 20px; }
   }
 </style>
 </head>
@@ -46,68 +92,86 @@
 <main>
   <div class="label">Photography</div>
   <div class="masonry">
-    <div class="masonry-item"><img src="images/photography/CannesCrepes.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/alpstrrainhand.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/andreahair.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/andreainmarseilles.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/andreatub.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/arizonamountatins.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/arizonareststop.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/auroreandcandide.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/beachscene.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/beachscenebig.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/biarritzsea.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/bootsbrooklyn.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/britneymarfa.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/britneymarfa2.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/britneytub.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/broandsisnice.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/cannesgirls.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/cannesport.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/cannesumbrellas.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/canyons.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/dilloniceland.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/dillonshadows.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/dillonshowernice.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/dillonverticaliceland.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/duskparisbuildin.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/eclecticdoor.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/familyinparis.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/frenchbuildings.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/germantrainstop.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/goldenhournice.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/gorgeousmuseumshot.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/gorgwater.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/home.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/icelandcoolchurch.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/icelandcowmountain.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/italianbalcony.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/libbyhostel.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/marseillesbigmoon.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/marseillesbuildings.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/marseillesgorgeousbandw.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/moodyfrenchbuilding.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/morenicebalcony.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/muse_dorsay.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/nice.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/nicebalcony.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/oaxaca_flower_lady.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/oaxaca_shoe_shine.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/oaxacafruitstand.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/oaxacaherblady.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/parisprotest.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/parisroofs.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/sadsandcastle.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/sandcastle.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/scar.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/spainbeach.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/spanishbeach.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/towelsitaly.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/venice.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/viewfromsacrecoeur.jpg" alt=""></div>
-    <div class="masonry-item"><img src="images/photography/womanaloneinnice.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/CannesCrepes.jpg')"><img src="images/photography/CannesCrepes.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/alpstrrainhand.jpg')"><img src="images/photography/alpstrrainhand.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/andreahair.jpg')"><img src="images/photography/andreahair.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/andreainmarseilles.jpg')"><img src="images/photography/andreainmarseilles.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/andreatub.jpg')"><img src="images/photography/andreatub.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/arizonamountatins.jpg')"><img src="images/photography/arizonamountatins.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/arizonareststop.jpg')"><img src="images/photography/arizonareststop.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/auroreandcandide.jpg')"><img src="images/photography/auroreandcandide.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/beachscene.jpg')"><img src="images/photography/beachscene.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/beachscenebig.jpg')"><img src="images/photography/beachscenebig.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/biarritzsea.jpg')"><img src="images/photography/biarritzsea.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/bootsbrooklyn.jpg')"><img src="images/photography/bootsbrooklyn.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/britneymarfa.jpg')"><img src="images/photography/britneymarfa.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/britneymarfa2.jpg')"><img src="images/photography/britneymarfa2.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/britneytub.jpg')"><img src="images/photography/britneytub.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/broandsisnice.jpg')"><img src="images/photography/broandsisnice.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/cannesgirls.jpg')"><img src="images/photography/cannesgirls.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/cannesport.jpg')"><img src="images/photography/cannesport.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/cannesumbrellas.jpg')"><img src="images/photography/cannesumbrellas.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/canyons.jpg')"><img src="images/photography/canyons.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/dilloniceland.jpg')"><img src="images/photography/dilloniceland.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/dillonshadows.jpg')"><img src="images/photography/dillonshadows.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/dillonshowernice.jpg')"><img src="images/photography/dillonshowernice.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/dillonverticaliceland.jpg')"><img src="images/photography/dillonverticaliceland.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/duskparisbuildin.jpg')"><img src="images/photography/duskparisbuildin.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/eclecticdoor.jpg')"><img src="images/photography/eclecticdoor.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/familyinparis.jpg')"><img src="images/photography/familyinparis.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/frenchbuildings.jpg')"><img src="images/photography/frenchbuildings.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/germantrainstop.jpg')"><img src="images/photography/germantrainstop.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/goldenhournice.jpg')"><img src="images/photography/goldenhournice.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/gorgeousmuseumshot.jpg')"><img src="images/photography/gorgeousmuseumshot.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/gorgwater.jpg')"><img src="images/photography/gorgwater.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/home.jpg')"><img src="images/photography/home.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/icelandcoolchurch.jpg')"><img src="images/photography/icelandcoolchurch.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/icelandcowmountain.jpg')"><img src="images/photography/icelandcowmountain.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/italianbalcony.jpg')"><img src="images/photography/italianbalcony.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/libbyhostel.jpg')"><img src="images/photography/libbyhostel.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/marseillesbigmoon.jpg')"><img src="images/photography/marseillesbigmoon.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/marseillesbuildings.jpg')"><img src="images/photography/marseillesbuildings.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/marseillesgorgeousbandw.jpg')"><img src="images/photography/marseillesgorgeousbandw.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/moodyfrenchbuilding.jpg')"><img src="images/photography/moodyfrenchbuilding.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/morenicebalcony.jpg')"><img src="images/photography/morenicebalcony.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/muse_dorsay.jpg')"><img src="images/photography/muse_dorsay.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/nice.jpg')"><img src="images/photography/nice.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/nicebalcony.jpg')"><img src="images/photography/nicebalcony.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/oaxaca_flower_lady.jpg')"><img src="images/photography/oaxaca_flower_lady.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/oaxaca_shoe_shine.jpg')"><img src="images/photography/oaxaca_shoe_shine.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/oaxacafruitstand.jpg')"><img src="images/photography/oaxacafruitstand.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/oaxacaherblady.jpg')"><img src="images/photography/oaxacaherblady.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/parisprotest.jpg')"><img src="images/photography/parisprotest.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/parisroofs.jpg')"><img src="images/photography/parisroofs.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/sadsandcastle.jpg')"><img src="images/photography/sadsandcastle.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/sandcastle.jpg')"><img src="images/photography/sandcastle.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/scar.jpg')"><img src="images/photography/scar.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/spainbeach.jpg')"><img src="images/photography/spainbeach.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/spanishbeach.jpg')"><img src="images/photography/spanishbeach.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/towelsitaly.jpg')"><img src="images/photography/towelsitaly.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/venice.jpg')"><img src="images/photography/venice.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/viewfromsacrecoeur.jpg')"><img src="images/photography/viewfromsacrecoeur.jpg" alt=""></div>
+    <div class="masonry-item" onclick="openLightbox('images/photography/womanaloneinnice.jpg')"><img src="images/photography/womanaloneinnice.jpg" alt=""></div>
   </div>
 </main>
+
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">Close ✕</span>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
 
 </body>
 </html>
