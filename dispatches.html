@@ -15,19 +15,15 @@
   .nav-links a { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #111; text-decoration: none; transition: color 0.15s; }
   .nav-links a:hover { color: #F03621; }
   .nav-links a.current { color: #F03621; }
-  main { flex: 1; padding: 60px 48px 70px; max-width: 640px; }
-  .label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #ccc; margin-bottom: 40px; }
-  .post-list { list-style: none; }
-  .post-row { display: block; padding: 24px 0; border-top: 0.5px solid #ebebeb; text-decoration: none; transition: opacity 0.15s; }
-  .post-list .post-row:last-child { border-bottom: 0.5px solid #ebebeb; }
-  .post-row:hover { opacity: 0.6; }
-  .post-row:hover .post-title { color: #F03621; }
-  .post-date { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc; margin-bottom: 6px; }
-  .post-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: #1338BE; transition: color 0.15s; }
+  main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 60px 48px 70px; max-width: 500px; }
+  .label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #ccc; margin-bottom: 24px; }
+  .dispatches-text { font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.8; color: #111; font-weight: 400; margin-bottom: 32px; }
+  .substack-link { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; color: #1338BE; text-decoration: underline; transition: color 0.15s; }
+  .substack-link:hover { color: #F03621; }
   @media (max-width: 600px) {
     nav { padding: 20px 24px; } main { padding: 40px 24px 50px; }
     .nav-links { gap: 16px; } .nav-links a { font-size: 9px; }
-    .post-title { font-size: 17px; }
+    .dispatches-text { font-size: 16px; }
   }
 </style>
 </head>
@@ -46,16 +42,8 @@
 
 <main>
   <div class="label">Dispatches</div>
-  <ul class="post-list">
-
-    <li>
-      <a href="dispatches/nicaragua.html" class="post-row">
-        <div class="post-date">May 2026</div>
-        <div class="post-title">Nicaragua</div>
-      </a>
-    </li>
-
-  </ul>
+  <div class="dispatches-text">Essays, photographs, and notes — published on Substack.</div>
+  <a href="https://loveandrobots.substack.com/" class="substack-link" target="_blank">Read Love and Robots →</a>
 </main>
 
 </body>
