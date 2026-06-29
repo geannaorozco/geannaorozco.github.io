@@ -62,7 +62,13 @@
 <main>
   <div class="label">Dispatches</div>
   <div class="grid" id="dispatch-grid">
-
+   <div class="grid-item" onclick="openPost(1)">
+  <img src="images/dispatches/Puertorico2017.jpg" alt="">
+  <div class="grid-item-overlay">
+    <div class="grid-item-overlay-date">June 2026</div>
+  </div>
+</div>
+   
     <div class="grid-item" onclick="openPost(0)">
       <img src="images/dispatches/nicaragua-01.jpg" alt="">
       <div class="grid-item-overlay">
@@ -80,6 +86,13 @@
 
 <script>
   const posts = [
+   {
+  date: "February 2017",
+  title: "Puerto Trip",
+  image: "images/dispatches/Puertorico2017.jpg",
+  text: "WE were young once."
+},
+
     {
       date: "May 2026",
       title: "Nicaragua",
